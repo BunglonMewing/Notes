@@ -4,8 +4,8 @@
  
 ```
 ╔═══════════════════════════════════╗
-║      📝  N O T E F L O W         ║
-║   Android 15 · Material You      ║
+║      📝  N O T E S         ║
+║   Android 15 · Material You║
 ╚═══════════════════════════════════╝
 ```
  
