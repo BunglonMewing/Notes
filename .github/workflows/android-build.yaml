@@ -1,0 +1,54 @@
+name: Build Android APK (NoteFlow)
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Compile NoteFlow APK
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 1. Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 2. Setup Node.js Env
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: 3. Setup Java JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: 4. Install Capacitor Dependencies
+        run: npm ci
+
+      - name: 5. Initialize Android Project Platform
+        run: |
+          npx cap init "NoteFlow" "com.circledev.noteflow" --web-dir=www || true
+          npx cap add android
+
+      - name: 6. Inject HTML Assets into WebView
+        run: npx cap sync android
+
+      - name: 7. Compile Debug APK via Gradle
+        run: |
+          cd android
+          ./gradlew assembleDebug
+
+      - name: 8. Upload Binary Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: NoteFlow-v1.0-DebugAPK
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 7
+          
