@@ -1,7 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#26A68E</color>
-    <color name="colorPrimaryDark">#1B7463</color>
-    <color name="colorAccent">#DF2347</color>
-    <color name="colorControlHighlight">#ADFFF0</color>
-    <color name="colorControlNormal">#888888</color>
+    <color name="primary">#006A6A</color>
+    <color name="onPrimary">#FFFFFF</color>
+    <color name="primaryContainer">#9DF0EF</color>
+    <color name="onPrimaryContainer">#002020</color>
+    <color name="secondaryContainer">#CCE8E8</color>
+    <color name="surface1">#EAF4F4</color>
+    <color name="surface2">#DFF0F0</color>
+    <color name="surface3">#D3ECEC</color>
+    <color name="bg">#F4FBFB</color>
+    <color name="text">#161D1D</color>
+    <color name="textVariant">#3F4949</color>
+    <color name="outline">#6F7979</color>
+    <color name="outlineVariant">#BEC9C9</color>
+    <color name="error">#BA1A1A</color>
 </resources>

@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="4dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="6dp"
+        android:paddingBottom="0dp">
+
+        <TextView
+            android:id="@+id/btnBack"
+            style="@style/IconButton"
+            android:contentDescription="Kembali"
+            android:tag="icon"
+            android:text="←"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/btnPin"
+            style="@style/IconButton"
+            android:contentDescription="Sematkan"
+            android:tag="icon"
+            android:text="📌"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/btnLock"
+            style="@style/IconButton"
+            android:contentDescription="Kunci"
+            android:tag="icon"
+            android:text="🔓"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/btnRead"
+            style="@style/IconButton"
+            android:contentDescription="Mode baca"
+            android:tag="icon"
+            android:text="👁"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/btnShare"
+            style="@style/IconButton"
+            android:contentDescription="Bagikan"
+            android:tag="icon"
+            android:text="↗"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/btnDelete"
+            style="@style/IconButton"
+            android:contentDescription="Hapus"
+            android:tag="icon"
+            android:text="🗑"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:tag="primary"
+            android:text="Simpan"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/findBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="4dp"
+        android:tag="s2"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/findInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="Cari..."
+            android:inputType="text"
+            android:maxLines="1"
+            android:tag="input"
+            android:textColor="@color/text"
+            android:textSize="13sp" />
+
+        <EditText
+            android:id="@+id/replaceInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="0.8"
+            android:background="@null"
+            android:hint="Ganti..."
+            android:inputType="text"
+            android:maxLines="1"
+            android:tag="input"
+            android:textColor="@color/text"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/findCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:tag="sub"
+            android:text="0"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/btnReplace"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:contentDescription="Ganti semua"
+            android:gravity="center"
+            android:tag="icon"
+            android:text="↻"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/btnFindClose"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:contentDescription="Tutup pencarian"
+            android:gravity="center"
+            android:tag="icon"
+            android:text="✕"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/titleInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:background="@null"
+        android:fontFamily="sans-serif-medium"
+        android:hint="Judul..."
+        android:inputType="textCapSentences"
+        android:maxLines="2"
+        android:tag="input"
+        android:textColor="@color/text"
+        android:textSize="22sp" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/tagBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="14dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="14dp" />
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/reminderButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingStart="10dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="5dp"
+        android:tag="pill"
+        android:text="🔔 Tambah pengingat"
+        android:textSize="12sp" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/fmtBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp" />
+    </HorizontalScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="2dp"
+        android:tag="divider" />
+
+    <EditText
+        android:id="@+id/bodyInput"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@null"
+        android:gravity="top|start"
+        android:hint="Mulai menulis..."
+        android:inputType="textCapSentences|textMultiLine"
+        android:lineSpacingExtra="4dp"
+        android:paddingStart="16dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="12dp"
+        android:scrollbars="vertical"
+        android:tag="input"
+        android:textColor="@color/text"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/saveStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingStart="16dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="2dp"
+        android:tag="save"
+        android:textColor="@color/textVariant"
+        android:textSize="10sp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="14dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="14dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Warna:"
+            android:tag="sub"
+            android:textSize="11sp" />
+
+        <LinearLayout
+            android:id="@+id/colorDots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/wordCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="sub"
+            android:text="0 kata"
+            android:textSize="11sp" />
+    </LinearLayout>
+</LinearLayout>
