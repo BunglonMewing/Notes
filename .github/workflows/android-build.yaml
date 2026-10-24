@@ -26,9 +26,13 @@ jobs:
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
-
-      - name: Accept Android licenses
-        run: yes | sdkmanager --licenses > /dev/null || true
+        with:
+          # Default action ini adalah 'tools platform-tools'. Paket 'tools' sudah
+          # di-retire dan ditolak sdkmanager 16.0 dengan "Failed to find package
+          # 'tools'" (exit code 1), sehingga step gagal sebelum build jalan.
+          # Kosongkan; sdkmanager + platform-tools tetap ditambahkan ke PATH
+          # oleh action-nya, dan license tetap diterima otomatis.
+          packages: ''
 
       - name: Install Android SDK packages
         run: sdkmanager "platforms;android-35" "build-tools;34.0.0" "build-tools;35.0.0"
